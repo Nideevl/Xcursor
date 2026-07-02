@@ -1,0 +1,817 @@
+/* ============================================================================
+   XCURSOR - FIXED VERSION: Slider groove height WILL change now
+   The KEY is: padding on SLIDER, not on GROOVE
+   ============================================================================ */
+
+QMainWindow #stopButton,
+QMainWindow #sendButton {
+    border: none;
+    background: transparent;
+}
+
+/* ============================================================================
+   UNIVERSAL BRIGHTNESS CONTAINER
+   ============================================================================ */
+QMainWindow #brightnessContainer {
+    background: transparent;
+}
+
+QMainWindow #opacityPercentage {
+    font-size: 11px;
+    font-weight: 500;
+    min-width: 25px;
+}
+
+/* ============================================================================
+   DARK THEME (DEFAULT)
+   ============================================================================ */
+QMainWindow[theme="dark"] #glassWidget {
+    background: rgba(0, 0, 0, 0.97);
+    border-radius: 12px;
+    border: 1px solid rgba(48, 54, 61, 0.90);
+}
+
+QMainWindow[theme="dark"] #header {
+    background: transparent;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 1px solid rgba(48, 54, 61, 0.90);
+    border-bottom: none;
+}
+
+QMainWindow[theme="dark"] #titleLabel {
+    color: #E6EDF3;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+QMainWindow[theme="dark"] #separator {
+    background: transparent;
+    border: none;
+}
+
+/* ============================================================================
+   DARK THEME - CIRCULAR Theme Buttons (50% = Perfect Circles)
+   ============================================================================ */
+QMainWindow[theme="dark"] #themeBtn-dark {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #7a8290);
+    border: 1px solid #f0f6fc;
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="dark"] #themeBtn-dark:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #8a92a0);
+    border: 1px solid #ffffff;
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="dark"] #themeBtn-green {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #69F0AE, stop:1 #00A030);
+    border: 1px solid rgba(76, 175, 80, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="dark"] #themeBtn-green:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #76FF8F, stop:1 #00B83A);
+    border: 1px solid rgba(76, 175, 80, 0.80);
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="dark"] #themeBtn-blue {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #64B5FF, stop:1 #1040D0);
+    border: 1px solid rgba(21, 101, 192, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="dark"] #themeBtn-blue:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #82B1FF, stop:1 #1656E0);
+    border: 1px solid rgba(21, 101, 192, 0.80);
+    margin: 0px 1px;
+}
+
+/* ✅ DARK THEME - SLIDER: Padding on WIDGET, not groove */
+QMainWindow[theme="dark"] #opacitySlider {
+    background: transparent;
+    border: none;
+    padding: 4px 0px;
+}
+
+QMainWindow[theme="dark"] #opacitySlider::groove:horizontal {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    height: 3px;
+    margin: 0px;
+    border-radius: 1px;
+}
+
+QMainWindow[theme="dark"] #opacitySlider::handle:horizontal {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    width: 9px;
+    height: 8px;
+    margin: -4px 0px;
+    border-radius: 5px;
+}
+
+QMainWindow[theme="dark"] #opacitySlider::handle:horizontal:hover {
+    background: #f0f6fc;
+    border: 1px solid #f0f6fc;
+}
+
+QMainWindow[theme="dark"] #opacitySlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #eaedf1, stop:1 #b3b5b6);
+    border-radius: 1px;
+}
+
+QMainWindow[theme="dark"] #minimizeButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #8b949e;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 6px;
+}
+
+QMainWindow[theme="dark"] #minimizeButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #E6EDF3;
+}
+
+QMainWindow[theme="dark"] #scrollArea {
+    background: transparent;
+    border: none;
+}
+
+QMainWindow[theme="dark"] #scrollArea QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.02);
+    border: none;
+    width: 6px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QMainWindow[theme="dark"] #scrollArea QScrollBar::handle:vertical {
+    background: rgba(110, 118, 129, 0.30);
+    border-radius: 3px;
+    min-height: 20px;
+}
+
+QMainWindow[theme="dark"] #scrollArea QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+QMainWindow[theme="dark"] #userBubble {
+    background: rgb(41, 41, 41);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+QMainWindow[theme="dark"] #userMessageContent {
+    color: #ffffff;
+    font-family: "Aptos";
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px;
+    background-color: transparent;
+}
+
+QMainWindow[theme="dark"] #showMoreButton {
+    color: #58A6FF;
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 0px;
+    text-align: left;
+}
+
+QMainWindow[theme="dark"] #showMoreButton:hover {
+    text-decoration: underline;
+}
+
+QMainWindow[theme="dark"] #aiStarIcon {
+    font-size: 14px;
+    background: transparent;
+}
+
+QMainWindow[theme="dark"] #aiNameLabel {
+    color: #E6EDF3;
+    font-size: 13px;
+    font-weight: 600;
+    background: transparent;
+}
+
+QMainWindow[theme="dark"] #aiMessageContent {
+    color: #E6EDF3;
+    font-size: 14px;
+    padding: 0px;
+    background-color: transparent;
+    line-height: 1.6;
+}
+
+QMainWindow[theme="dark"] #inputContainer {
+    background: rgba(48, 54, 61, 0.50);
+    border-radius: 20px;
+    border: 1px solid rgba(48, 54, 61, 0.90);
+}
+
+QMainWindow[theme="dark"] #inputField {
+    background: transparent;
+    border: none;
+    color: #E6EDF3;
+    font-size: 14px;
+    padding: 10px 16px;
+    selection-background-color: rgba(88, 166, 255, 0.30);
+    margin: 0px;
+}
+
+QMainWindow[theme="dark"] #inputField::placeholder {
+    color: #484f58;
+}
+
+QMainWindow[theme="dark"] #stopButton {
+    font-weight: 600;
+}
+
+QMainWindow[theme="dark"] #sendButton {
+    color: #58A6FF;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   GREEN THEME (Alien)
+   ============================================================================ */
+QMainWindow[theme="green"] #glassWidget {
+    background: rgba(10, 18, 12, 0.97);
+    border-radius: 12px;
+    border: 1px solid rgba(45, 85, 55, 0.70);
+}
+
+QMainWindow[theme="green"] #header {
+    background: rgba(10, 18, 12, 0.97);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 1px solid rgba(45, 85, 55, 0.70);
+    border-bottom: none;
+}
+
+QMainWindow[theme="green"] #titleLabel {
+    color: #D6FFE4;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+QMainWindow[theme="green"] #separator {
+    background: transparent;
+    border: none;
+}
+
+/* ============================================================================
+   GREEN THEME - CIRCULAR Theme Buttons
+   ============================================================================ */
+QMainWindow[theme="green"] #themeBtn-dark {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #7a8290);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="green"] #themeBtn-dark:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #babcc1);
+    border: 1px solid #ffffff;
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="green"] #themeBtn-green {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #69F0AE, stop:1 #00A030);
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="green"] #themeBtn-green:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #76FF8F, stop:1 #00B83A);
+    border: 1px solid #66BB6A;
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="green"] #themeBtn-blue {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #64B5FF, stop:1 #1040D0);
+    border: 1px solid rgba(21, 101, 192, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="green"] #themeBtn-blue:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #82B1FF, stop:1 #1656E0);
+    border: 1px solid rgba(21, 101, 192, 0.50);
+    margin: 0px 1px;
+}
+
+/* ✅ GREEN THEME - SLIDER */
+QMainWindow[theme="green"] #opacitySlider {
+    background: transparent;
+    border: none;
+    padding: 4px 0px;
+    max-width: 80px;
+}
+
+QMainWindow[theme="green"] #opacitySlider::groove:horizontal {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    height: 3px;
+    margin: 0px;
+    border-radius: 1px;
+}
+
+QMainWindow[theme="green"] #opacitySlider::handle:horizontal {
+    background: #69F0AE;
+    border: 1px solid #69F0AE;
+    width: 9px;
+    height: 8px;
+    margin: -4px 0px;
+    border-radius: 5px;
+}
+
+QMainWindow[theme="green"] #opacitySlider::handle:horizontal:hover {
+    background: #76FF8F;
+    border: 1px solid #76FF8F;
+}
+
+QMainWindow[theme="green"] #opacitySlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3DCC84, stop:1 #27A855);
+    border-radius: 1px;
+}
+
+QMainWindow[theme="green"] #minimizeButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #7D8B82;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 6px;
+}
+
+QMainWindow[theme="green"] #minimizeButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #D6FFE4;
+}
+
+QMainWindow[theme="green"] #scrollArea {
+    background: transparent;
+    border: none;
+}
+
+QMainWindow[theme="green"] #scrollArea QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.02);
+    border: none;
+    width: 6px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QMainWindow[theme="green"] #scrollArea QScrollBar::handle:vertical {
+    background: rgba(61, 220, 132, 0.25);
+    border-radius: 3px;
+    min-height: 20px;
+}
+
+QMainWindow[theme="green"] #scrollArea QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+QMainWindow[theme="green"] #userBubble {
+    background: rgb(20, 50, 30);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid rgba(61, 220, 132, 0.20);
+}
+
+QMainWindow[theme="green"] #userMessageContent {
+    color: #D6FFE4;
+    font-family: "Aptos";
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px;
+    background-color: transparent;
+}
+
+QMainWindow[theme="green"] #showMoreButton {
+    color: #3DDC84;
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 0px;
+    text-align: left;
+}
+
+QMainWindow[theme="green"] #showMoreButton:hover {
+    text-decoration: underline;
+}
+
+QMainWindow[theme="green"] #aiStarIcon {
+    font-size: 14px;
+    background: transparent;
+}
+
+QMainWindow[theme="green"] #aiNameLabel {
+    color: #D6FFE4;
+    font-size: 13px;
+    font-weight: 600;
+    background: transparent;
+}
+
+QMainWindow[theme="green"] #aiMessageContent {
+    color: #D6FFE4;
+    font-size: 14px;
+    padding: 0px;
+    background-color: transparent;
+    line-height: 1.6;
+}
+
+QMainWindow[theme="green"] #inputContainer {
+    background: rgba(29, 54, 35, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(45, 85, 55, 0.70);
+}
+
+QMainWindow[theme="green"] #inputField {
+    background: transparent;
+    border: none;
+    color: #D6FFE4;
+    font-size: 14px;
+    padding: 10px 16px;
+    selection-background-color: rgba(61, 220, 132, 0.30);
+    margin: 0px;
+}
+
+QMainWindow[theme="green"] #inputField::placeholder {
+    color: #4a6b56;
+}
+
+QMainWindow[theme="green"] #stopButton {
+    font-weight: 600;
+}
+
+QMainWindow[theme="green"] #sendButton {
+    color: #3DDC84;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   BLUE THEME (Futuristic)
+   ============================================================================ */
+QMainWindow[theme="blue"] #glassWidget {
+    background: rgba(9, 14, 24, 0.97);
+    border-radius: 12px;
+    border: 1px solid rgba(55, 85, 140, 0.65);
+}
+
+QMainWindow[theme="blue"] #header {
+    background: rgba(9, 14, 24, 0.97);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 1px solid rgba(55, 85, 140, 0.65);
+    border-bottom: none;
+}
+
+QMainWindow[theme="blue"] #titleLabel {
+    color: #DCEEFF;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+QMainWindow[theme="blue"] #separator {
+    background: transparent;
+    border: none;
+}
+
+/* ============================================================================
+   BLUE THEME - CIRCULAR Theme Buttons
+   ============================================================================ */
+QMainWindow[theme="blue"] #themeBtn-dark {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #7a8290);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="blue"] #themeBtn-dark:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #ffffff, stop:1 #8a92a0);
+    border: 1px solid #ffffff;
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="blue"] #themeBtn-green {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #69F0AE, stop:1 #00A030);
+    border: 1px solid rgba(76, 175, 80, 0.30);
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="blue"] #themeBtn-green:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #76FF8F, stop:1 #00B83A);
+    border: 1px solid rgba(76, 175, 80, 0.50);
+    margin: 0px 1px;
+}
+
+QMainWindow[theme="blue"] #themeBtn-blue {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #64B5FF, stop:1 #1040D0);
+    border: 1px solid #1565C0;
+    border-radius: 4px;
+    color: transparent;
+    font-size: 0px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px 2px;
+    min-width: 13px;
+    max-width: 13px;
+    min-height: 13px;
+    max-height: 13px;
+}
+
+QMainWindow[theme="blue"] #themeBtn-blue:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #82B1FF, stop:1 #1656E0);
+    border: 1px solid #1976D2;
+    margin: 0px 1px;
+}
+
+/* ✅ BLUE THEME - SLIDER */
+QMainWindow[theme="blue"] #opacitySlider {
+    background: transparent;
+    border: none;
+    padding: 4px 0px;
+}
+
+QMainWindow[theme="blue"] #opacitySlider::groove:horizontal {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    height: 3px;
+    margin: 0px;
+    border-radius: 1px;
+}
+
+QMainWindow[theme="blue"] #opacitySlider::handle:horizontal {
+    background: #64B5FF;
+    border: 1px solid #64B5FF;
+    width: 9px;
+    height: 8px;
+    margin: -4px 0px;
+    border-radius: 5px;
+}
+
+QMainWindow[theme="blue"] #opacitySlider::handle:horizontal:hover {
+    background: #82B1FF;
+    border: 1px solid #82B1FF;
+}
+
+QMainWindow[theme="blue"] #opacitySlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #2979F0, stop:1 #1E53E5);
+    border-radius: 1px;
+}
+
+QMainWindow[theme="blue"] #minimizeButton {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #8892A0;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 6px;
+}
+
+QMainWindow[theme="blue"] #minimizeButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #DCEEFF;
+}
+
+QMainWindow[theme="blue"] #scrollArea {
+    background: transparent;
+    border: none;
+}
+
+QMainWindow[theme="blue"] #scrollArea QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.02);
+    border: none;
+    width: 6px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QMainWindow[theme="blue"] #scrollArea QScrollBar::handle:vertical {
+    background: rgba(77, 166, 255, 0.25);
+    border-radius: 3px;
+    min-height: 20px;
+}
+
+QMainWindow[theme="blue"] #scrollArea QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+QMainWindow[theme="blue"] #userBubble {
+    background: rgb(15, 30, 55);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid rgba(77, 166, 255, 0.18);
+}
+
+QMainWindow[theme="blue"] #userMessageContent {
+    color: #DCEEFF;
+    font-family: "Aptos";
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px;
+    background-color: transparent;
+}
+
+QMainWindow[theme="blue"] #showMoreButton {
+    color: #4DA6FF;
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 0px;
+    text-align: left;
+}
+
+QMainWindow[theme="blue"] #showMoreButton:hover {
+    text-decoration: underline;
+}
+
+QMainWindow[theme="blue"] #aiStarIcon {
+    font-size: 14px;
+    background: transparent;
+}
+
+QMainWindow[theme="blue"] #aiNameLabel {
+    color: #DCEEFF;
+    font-size: 13px;
+    font-weight: 600;
+    background: transparent;
+}
+
+QMainWindow[theme="blue"] #aiMessageContent {
+    color: #DCEEFF;
+    font-size: 14px;
+    padding: 0px;
+    background-color: transparent;
+    line-height: 1.6;
+}
+
+QMainWindow[theme="blue"] #inputContainer {
+    background: rgba(29, 44, 72, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(55, 85, 140, 0.65);
+}
+
+QMainWindow[theme="blue"] #inputField {
+    background: transparent;
+    border: none;
+    color: #DCEEFF;
+    font-size: 14px;
+    padding: 10px 16px;
+    selection-background-color: rgba(77, 166, 255, 0.30);
+    margin: 0px;
+}
+
+QMainWindow[theme="blue"] #inputField::placeholder {
+    color: #5a7a9f;
+}
+
+QMainWindow[theme="blue"] #stopButton {
+    font-weight: 600;
+}
+
+QMainWindow[theme="blue"] #sendButton {
+    color: #4DA6FF;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   UNIVERSAL STYLES
+   ============================================================================ */
+QMainWindow #content {
+    background: transparent;
+}
+
+QMainWindow #messageContainer {
+    background: transparent;
+}
+
+QMainWindow #userMessageWrapper {
+    margin: 2px 0px;
+}
+
+QMainWindow #aiMessageWrapper {
+    margin: 2px 0px;
+}
+
+QMainWindow #scrollArea QScrollBar::add-line:vertical,
+QMainWindow #scrollArea QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+QSizeGrip {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+}

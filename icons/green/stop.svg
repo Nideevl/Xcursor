@@ -1,0 +1,19 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> 
+    <circle 
+        cx="12" 
+        cy="12" 
+        r="11" 
+        fill="#69F0AE" 
+        stroke="#2D9370" 
+        stroke-width="0.85" 
+    /> 
+    <rect 
+        x="8" 
+        y="8" 
+        width="8" 
+        height="8" 
+        rx="1" 
+        fill="#0A1E0C" 
+        stroke="none" 
+    /> 
+</svg>
