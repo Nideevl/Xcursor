@@ -26,7 +26,8 @@ class XcursorAI:
         
         # State tracking
         self.last_service = None  # Track which service was used
-        
+        self.streaming = False 
+
         # ✅ Add these missing attributes
         self.connected = self.groq_available or self.ollama_available
         self.model = self.groq_model if self.groq_available else self.ollama_model
@@ -110,6 +111,9 @@ class XcursorAI:
         self._analyze_ollama(text, token_callback, done_callback, self.ollama_model, conversation_history)
         self.last_service = "Ollama"
         
+    def stop_streaming(self):
+        self.streaming = False  # Add a flag
+
     def _analyze_groq(self, text, token_callback, done_callback, conversation_history):
         """
         Attempt streaming via Groq API.
@@ -119,6 +123,7 @@ class XcursorAI:
         """
         try:
             # Build messages for Groq (OpenAI-compatible format)
+            self.streaming = True
             messages = []
             
             if conversation_history:
@@ -145,7 +150,7 @@ class XcursorAI:
                     "messages": messages,
                     "stream": True,
                     "temperature": 0.7,
-                    "max_tokens": 1024,
+                    "max_tokens": 2048,
                 },
                 timeout=30,
                 stream=True
@@ -188,6 +193,9 @@ class XcursorAI:
                 token_callback(chunk)
 
             for line in response.iter_lines():
+                if not self.streaming:
+                    print("🛑 Streaming stopped by user")
+                    break
                 if line:
                     line = line.decode('utf-8') if isinstance(line, bytes) else line
                     if line.startswith("data: "):
@@ -245,6 +253,7 @@ class XcursorAI:
             if full_response and not full_response.endswith('\n'):
                 token_callback('\n')
             
+            self.streaming = False
             done_callback()
             return True
         
@@ -252,6 +261,7 @@ class XcursorAI:
             print("⏱️  Groq timeout")
             return False
         except Exception as e:
+            self.streaming = False
             print(f"❌ Groq error: {str(e)}")
             return False 
         

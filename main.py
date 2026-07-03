@@ -157,7 +157,12 @@ class MainApplication(QApplication):
             
             elif cmd_type == 'minimize':
                 print(f"🔍 DEBUG: minimize command received")
-                self.overlay.minimize_window()  
+                # ✅ STOP AI BEFORE MINIMIZING (for horizontal gesture)
+                if self.overlay.ai_started:
+                    print("🛑 Stopping AI due to gesture minimize")
+                    self.detector.Xcursor_ai.stop_streaming()
+                    self.overlay.finish_ai_response()
+                self.overlay.minimize_window() 
 
             elif cmd_type == 'show_existing':
                 print(f"🔍 DEBUG: show_existing - showing overlay without clearing")
