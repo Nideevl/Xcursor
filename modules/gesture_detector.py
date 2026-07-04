@@ -378,27 +378,23 @@ class GestureDetector:
             self._handle_horizontal_shake()
     
     def _handle_horizontal_shake(self):
-        """FEATURE 2: Handle horizontal shake with clipboard awareness
+        """✅ SIMPLIFIED: Horizontal shake logic
         
-        Logic:
-        - If window is visible AND clipboard is empty → close window
-        - If window is visible AND clipboard has content → do nothing (prevent accidental close)
-        - If window is hidden → open window and copy clipboard content
+        NEW BEHAVIOR (simplified):
+        - If window visible → close it (don't check clipboard)
+        - If window hidden → open it (don't check clipboard)
+        
+        That's it. No more clipboard safety checks.
         """
         is_visible = self.cmd_queue.is_overlay_visible()
-        clipboard_empty = self.is_clipboard_empty()
         
         if is_visible:
-            if clipboard_empty:
-                # Window visible + clipboard empty → CLOSE WINDOW
-                print(f"\n🔒 Window visible + clipboard empty → Closing")
-                self.cmd_queue.clear_overlay()
-            else:
-                # Window visible + clipboard has content → Do nothing (protect accidental close)
-                print(f"\n🛡️ Window visible but clipboard has content → No action")
+            # Window is open → close it
+            print(f"\n📱 Window visible → Closing")
+            self.cmd_queue.clear_overlay()
         else:
-            # Window hidden → try to open with clipboard content
-            print(f"\n📱 Window hidden → Opening")
+            # Window is hidden → open it (try to show clipboard content)
+            print(f"\n📁 Window hidden → Opening")
             try:
                 with keyboard.pressed(Key.ctrl):
                     keyboard.press('c')
@@ -408,9 +404,10 @@ class GestureDetector:
                 if text:
                     self._show_overlay_with_text(text)
                 else:
+                    # No clipboard content → open input overlay
                     self.cmd_queue.show_input_overlay(self.last_shake_pos)
             except Exception as e:
-                print(f"⚠️ Error copying clipboard: {e}")
+                print(f"⚠️ Error: {e}")
                 self.cmd_queue.show_input_overlay(self.last_shake_pos)
             
     def detect_vertical_shake(self):
