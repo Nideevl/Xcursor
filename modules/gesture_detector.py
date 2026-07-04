@@ -157,14 +157,13 @@ class GestureDetector:
             def token_callback(token):
                 if self.ai_stop_requested:
                     return
-                if overlay:
-                    overlay.add_ai_token(token)
+                # ✅ Queue for main thread processing
+                self.cmd_queue.add_ai_token(token)
             
             def done_callback():
                 self.ai_streaming = False
-                if overlay:
-                    overlay.finish_ai_response()
-                    # overlay.hide_loading()  # ✅ Uncomment if this method exists
+                # ✅ Signal completion via cmd_queue
+                self.cmd_queue.add_ai_token("", final=True)
             
             # ✅ Pass selected model to AI
             self.Xcursor_ai.analyze_streaming(

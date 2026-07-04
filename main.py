@@ -97,7 +97,6 @@ class MainApplication(QApplication):
             print(f"⚠️ Could not save window size: {e}")
     
     def process_commands(self):
-        """Process commands from queue in main thread"""
         cmd = self.cmd_queue.get_command()
         if cmd:
             cmd_type = cmd[0]
